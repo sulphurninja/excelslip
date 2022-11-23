@@ -1,7 +1,9 @@
 import React, { useState, useRef } from 'react'
 import * as XLSX from 'xlsx';
 
-const ExcelImport = (props:any) => {
+
+
+const ExcelImport = (props) => {
     const [fileName, setFileName] = useState(null);
     const [sheetNames, setSheetNames] = useState([]);
     const [file, setFile] = useState(null);
@@ -17,19 +19,19 @@ const ExcelImport = (props:any) => {
 
     const acceptableFileName = ["xlsx", "xls"];
 
-    const checkFileName =(name:any)=>{
+    const checkFileName =(name)=>{
         return acceptableFileName.includes(name.split(".").pop().toLowerCase());
     };
 
-    const readDataFromExcel = (data:any) =>{
+    const readDataFromExcel = (data) =>{
         const wb = XLSX.read(data);
-        setSheetNames(wb.SheetNames=[]);
+        setSheetNames(wb.SheetNames);
 
         var mySheetData = {};
 
         // Loop through the Sheets
         for(var i=0; i< wb.SheetNames.length; i++){
-            let SheetName = wb.SheetNames[i];
+            let SheetName = wb.SheetNames[i] ;
 
             const worksheet = wb.Sheets[SheetName];
             const jsonData = XLSX.utils.sheet_to_json(worksheet);
@@ -49,7 +51,7 @@ const ExcelImport = (props:any) => {
         console.log(wb);
     };
 
-    const handleFile =async (e:any)=>{
+    const handleFile =async (e)=>{
         const myFile = e.target.files[0];
         if(!myFile) return;
 

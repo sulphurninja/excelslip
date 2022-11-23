@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -22,7 +22,7 @@ export default function Home() {
     documentTitle: 'vote',
     onAfterPrint: () => alert('Success!')
   })
-  const handleFileUploaded = (e: any) => {
+  const handleFileUploaded = (e) => {
     console.log("File Uploaded", e);
     if (e) {
       setSheet(Object.keys(e)[0])
