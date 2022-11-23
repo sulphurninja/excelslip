@@ -127,7 +127,7 @@ export default function Home() {
                       <h1 className='text-[12px] '> {GENDER}  </h1>
                     </div>{/* end of mahila dabba */}
 
-                    <div className='-[40px] h-[17px] left-[220px] top-[92px]  absolute'> {/*mahila no dabba */}
+                    <div className='w-[40px] h-[17px] left-[240px] top-[92px]  absolute'> {/*mahila no dabba */}
                       <h1 className='text-[12px] '> {AGE}  </h1>
                     </div>{/* end of mahila no dabba */}
 
