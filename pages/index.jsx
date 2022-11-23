@@ -56,11 +56,11 @@ export default function Home() {
         {sheetData &&
           <main ref={componentRef} className='ml-[20px]  break-after-page mt-[30px] grid grid-cols-2 gap-10 mx-auto '>
             {sheetData[sheet].map(({
-              SECTION_NO, SLNOINPART, FM_NAME_V1, RLN_FM_NM_V1, PART_NO, LASTNAME_EN, GENDER, AGE, DOB, MOBILE_NO, PSBUILDING_NAME_EN, C_HOUSE_NO_V1, EPIC_NO }) => {
+              SECTION_NO, SLNOINPART, FM_NAME_V1, DATE_TIME, RLN_FM_NM_V1, PART_NO, LASTNAME_EN, CHUNAAV, GENDER, AGE, DOB, MOBILE_NO, PSBUILDING_NAME_EN, C_HOUSE_NO_V1, EPIC_NO }) => {
               return (
           /* BOX*/ <div className='border-black abs  ml-auto mr-auto border-2 w-[278px] left-[31px] top-[32px] h-[190px]'>
                   <div className=' left-[31px] text-center top-[32px] w-[278px] h-[20px]'> {/**nigam chunav */}
-                    <h1 className=' text-xs ml-auto mr-auto  font-bold'> दिल्ली नगर निगम चुनाव-2023 </h1>
+                    <h1 className=' text-xs ml-auto mr-auto  font-bold'> {CHUNAAV}</h1>
                   </div>
                   <div className=' border-black border-2  left-[37px] top-[50px] border-l-0 w-[276px] h-[25px]'>  {/**ward dabba */}
 
@@ -136,7 +136,7 @@ export default function Home() {
                     </div>{/* end of so. dabba */}
 
                     <div className='w-[276px] text-center mr-auto ml-auto border-l-0 border border-black top-[162px] h-[15px] mt-[125px]'> {/*footer  dabba */}
-                      <h1 className='text-[9px] '>मतदान दिनांक 04.12.2023 (रविवार) सुबह 8.00 से सायां 5.30 बजे तक</h1>
+                      <h1 className='text-[9px] '>{DATE_TIME}</h1>
                     </div>{/* footer dabba */}
 
 
