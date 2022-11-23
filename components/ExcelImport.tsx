@@ -23,7 +23,7 @@ const ExcelImport = (props:any) => {
 
     const readDataFromExcel = (data:any) =>{
         const wb = XLSX.read(data);
-        setSheetNames(wb.SheetNames);
+        setSheetNames(wb.SheetNames=[]);
 
         var mySheetData = {};
 
@@ -90,13 +90,13 @@ const ExcelImport = (props:any) => {
 
   return (
     <div>
-        {!fileName && <label>Filename: {fileName}</label>}
-        {!fileName && <label>Upload the Excel File</label>}
+        {!fileName && <label className='font-wow font-semibold'>Filename: {fileName}</label>}
+        {!fileName && <label className='font-wow'>Upload the Excel File</label>}
    
     <div>
         <input type="file" accept="xlsx, xls" multiple={false}  onChange={(e)=> handleFile(e)} ref={fileRef} />
         {fileName && (
-            <h3 className=' font-extrabold font-wow' onClick={handleRemove}>Close</h3>
+            <h3 className=' font-extrabold font-wow cursor-pointer' onClick={handleRemove}>X</h3>
         )}
     </div>
     </div>
